@@ -1,0 +1,1581 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title></title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+
+
+/* Flowchart variables */
+/* Sequence Diagram variables */
+/* Gantt chart variables */
+.mermaid .label {
+  color: #323D47;
+}
+
+g.label {
+    color: #333;
+}
+
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon {
+  fill: #BDD5EA;
+  stroke: #81B1DB;
+  stroke-width: 1px;
+}
+.edgePath .path {
+  stroke: lightgrey;
+}
+.edgeLabel {
+  background-color: #e8e8e8;
+}
+.cluster rect {
+  fill: #6D6D65 !important;
+  rx: 4 !important;
+  stroke: rgba(255, 255, 255, 0.25) !important;
+  stroke-width: 1px !important;
+}
+.cluster text {
+  fill: #F9FFFE;
+}
+.actor {
+  stroke: #81B1DB;
+  fill: #BDD5EA;
+}
+text.actor {
+  fill: black;
+  stroke: none;
+}
+.actor-line {
+  stroke: lightgrey;
+}
+.messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: "2 2";
+  marker-end: "url(file:///Users/han/Library/Application%20Support/abnerworks.Typora/themes/night/#arrowhead)";
+  stroke: lightgrey;
+}
+.messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: "2 2";
+  stroke: lightgrey;
+}
+#arrowhead {
+  fill: lightgrey !important;
+}
+#crosshead path {
+  fill: lightgrey !important;
+  stroke: lightgrey !important;
+}
+.messageText {
+  fill: lightgrey;
+  stroke: none;
+}
+.labelBox {
+  stroke: #81B1DB;
+  fill: #BDD5EA;
+}
+.labelText {
+  fill: #323D47;
+  stroke: none;
+}
+.loopText {
+  fill: lightgrey;
+  stroke: none;
+}
+text>tspan {
+  fill: inherit;
+}
+.loopLine {
+  stroke-width: 2;
+  stroke-dasharray: "2 2";
+  marker-end: "url(file:///Users/han/Library/Application%20Support/abnerworks.Typora/themes/night/#arrowhead)";
+  stroke: #81B1DB;
+}
+.note {
+  stroke: rgba(255, 255, 255, 0.25);
+  fill: #fff5ad;
+}
+.noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px;
+}
+/** Section styling */
+.section {
+  stroke: none;
+  opacity: 0.2;
+}
+.section0 {
+  fill: rgba(255, 255, 255, 0.3);
+}
+.section2 {
+  fill: #EAE8B9;
+}
+.section1,
+.section3 {
+  fill: white;
+  opacity: 0.2;
+}
+.sectionTitle0 {
+  fill: #F9FFFE;
+}
+.sectionTitle1 {
+  fill: #F9FFFE;
+}
+.sectionTitle2 {
+  fill: #F9FFFE;
+}
+.sectionTitle3 {
+  fill: #F9FFFE;
+}
+.sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px;
+}
+/* Grid and axis */
+.grid .tick {
+  stroke: rgba(255, 255, 255, 0.3);
+  opacity: 0.3;
+  shape-rendering: crispEdges;
+}
+.grid .tick text {
+  fill: lightgrey;
+  opacity: 0.5;
+}
+.grid path {
+  stroke-width: 0;
+}
+/* Today line */
+.today {
+  fill: none;
+  stroke: #DB5757;
+  stroke-width: 2px;
+}
+/* Task styling */
+/* Default task */
+.task {
+  stroke-width: 1;
+}
+.taskText {
+  text-anchor: middle;
+  font-size: 11px;
+}
+.taskTextOutsideRight {
+  fill: #323D47;
+  text-anchor: start;
+  font-size: 11px;
+}
+.taskTextOutsideLeft {
+  fill: #323D47;
+  text-anchor: end;
+  font-size: 11px;
+}
+/* Specific task settings for the sections*/
+.taskText0,
+.taskText1,
+.taskText2,
+.taskText3 {
+  fill: #323D47;
+}
+.task0,
+.task1,
+.task2,
+.task3 {
+  fill: #BDD5EA;
+  stroke: rgba(255, 255, 255, 0.5);
+}
+.taskTextOutside0,
+.taskTextOutside2 {
+  fill: lightgrey;
+}
+.taskTextOutside1,
+.taskTextOutside3 {
+  fill: lightgrey;
+}
+/* Active task */
+.active0,
+.active1,
+.active2,
+.active3 {
+  fill: #81B1DB;
+  stroke: rgba(255, 255, 255, 0.5);
+}
+.activeText0,
+.activeText1,
+.activeText2,
+.activeText3 {
+  fill: #323D47 !important;
+}
+/* Completed task */
+.done0,
+.done1,
+.done2,
+.done3 {
+  fill: lightgrey;
+}
+.doneText0,
+.doneText1,
+.doneText2,
+.doneText3 {
+  fill: #323D47 !important;
+}
+/* Tasks on the critical line */
+.crit0,
+.crit1,
+.crit2,
+.crit3 {
+  stroke: #E83737;
+  fill: #E83737;
+  stroke-width: 2;
+}
+.activeCrit0,
+.activeCrit1,
+.activeCrit2,
+.activeCrit3 {
+  stroke: #E83737;
+  fill: #81B1DB;
+  stroke-width: 2;
+}
+.doneCrit0,
+.doneCrit1,
+.doneCrit2,
+.doneCrit3 {
+  stroke: #E83737;
+  fill: lightgrey;
+  stroke-width: 1;
+  cursor: pointer;
+  shape-rendering: crispEdges;
+}
+.doneCritText0,
+.doneCritText1,
+.doneCritText2,
+.doneCritText3 {
+  fill: lightgrey !important;
+}
+.activeCritText0,
+.activeCritText1,
+.activeCritText2,
+.activeCritText3 {
+  fill: #323D47 !important;
+}
+.titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: lightgrey;
+}
+/*
+
+
+*/
+.node text {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px;
+}
+div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 12px;
+  background: #6D6D65;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+@charset "UTF-8";
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+@charset "UTF-8";
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+li > blockquote {
+	margin-bottom: 0;
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+    font-size: 0.875rem;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 1;
+}
+
+.md-inline-math g,
+.md-inline-math svg {
+    stroke: #b8bfc6 !important;
+    fill: #b8bfc6 !important;
+}
+
+[md-inline='inline_math'] {
+    color: #9CB2E9;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54;
+}
+
+.md-search-hit {
+    background-color: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><ul><li><p><span> </span></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=9'><span>Good morning and welcome to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=12'><span>Data Flow Through SwiftUI.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=13'><span>My name is Luca Bernardi and I </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=15'><span>will later be joined by my </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=17'><span>friend and colleague, Raj </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=18'><span>Ramamaurthy.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=18'><span>Are you guys excited about </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=19'><span>SwiftUI? </span></a><span>[</span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=20'><span>Simultaneously</span><span>]</span><span> Yeah.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=21'><span>Sweet. I&#39;m super excited to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=25'><span>be here today.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=25'><span>SwiftUI is the shortest path to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=28'><span>a great app, but we also </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=30'><span>designed it from the ground up </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=32'><span>with the goal of solving the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=33'><span>complexity of UI development.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=35'><span>That means that data is a first </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=37'><span>class citizen in SwiftUI.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=40'><span>In this talk, we are going to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=42'><span>show you the simple but powerful </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=44'><span>tool that you have at your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=45'><span>disposal to flow data through </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=47'><span>your view hierarchy.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=49'><span>This tool can help you achieve app that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=50'><span>are not only beautiful but also </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=52'><span>well behaved.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=56'><span>We will also look under the hood </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=57'><span>of how SwiftUI updates your view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=59'><span>hierarchy to guarantee that you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=61'><span>always have a correct and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=62'><span>consistent representation of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=64'><span>your data.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=65'><span>And finally, we will empower you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=67'><span>with a mental framework for </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=69'><span>understanding your data and the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=70'><span>tool available to you.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=73'><span>But before moving on, what do we </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=76'><span>mean by data? </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=78'><span>Data is all the information that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=79'><span>drives your UI.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=81'><span>Data comes in all sort of shapes </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=83'><span>and form.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=84'><span>One example is stating your UI </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=85'><span>like the state of a toggle.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=89'><span>Data also represent model data, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=91'><span>such as the object that drives a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=92'><span>list of messages.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=96'><span>We have a number of tool at your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=97'><span>disposal depending on what you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=99'><span>want to achieve.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=100'><span>You&#39;ve probably seen some of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=101'><span>this tool in previous talk.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=102'><span>But if you are not familiar with </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=104'><span>them, don&#39;t worry we&#39;re going to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=107'><span>explain what they are and when </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=108'><span>to use them.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=110'><span>At the end of this talk, you&#39;ll </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=111'><span>know exactly what tool to use </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=114'><span>and when.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=115'><span>But before showing you this </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=117'><span>tool, I would like to illustrate </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=119'><span>the two guiding principle that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=120'><span>inspired us in designing them.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=123'><span>The first principle is that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=125'><span>every time you read a piece of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=126'><span>data in your view, you&#39;re </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=128'><span>creating a dependency for that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=129'><span>view.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=130'><span>This is a dependency because </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=131'><span>every time the data changes, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=133'><span>your view has to change to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=134'><span>reflect the new value.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=137'><span>For example, here in blue I have </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=138'><span>a view showing some playback </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=139'><span>control and the view needs to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=141'><span>read some data in purple.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=143'><span>Every time this value changes, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=145'><span>we need to update the view.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=148'><span>And so additionally, defining </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=150'><span>this dependency is a manual </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=151'><span>process and it can quickly </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=153'><span>become a complex endeavor.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=155'><span>But just like viewing SwiftUI </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=158'><span>are declarative, data dependency </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=160'><span>are as well.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=160'><span>There is no manual </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=161'><span>synchronization or invalidation.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=163'><span>With SwiftUI, you simply </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=166'><span>describe the dependency to the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=168'><span>framework using few tools and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=170'><span>the frameworks handles all the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=171'><span>rest.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=171'><span>And that means that you can </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=174'><span>focus on building the best </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=175'><span>experience for your user.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=180'><span>The second principle is that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=181'><span>every piece of data that you&#39;re </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=183'><span>reading in your view hierarchy </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=184'><span>has a source of truth.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=187'><span>The source of truth can live in </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=188'><span>your view hierarchy.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=189'><span>For example when you have some </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=190'><span>state about something should be </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=193'><span>collapsed or not, or it can be </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=194'><span>external such as when you&#39;re </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=196'><span>displaying a message coming from </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=198'><span>a persistent model.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=201'><span>Regardless of where the source </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=202'><span>of truth live, you should always </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=204'><span>have a single source of truth.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=209'><span>Duplicated source of truth can </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=211'><span>lead to bug and inconsistency </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=212'><span>because you always have to be </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=214'><span>careful in keeping them in sync.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=216'><span>Think about all the time you&#39;ve </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=218'><span>duplicated the same piece of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=219'><span>data, for example, into sibling </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=222'><span>view and how all the complexity </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=224'><span>of posting notification, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=226'><span>KV observing or </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=227'><span>responding to a different </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=228'><span>sequence of event has caused </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=230'><span>your bug.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=232'><span>And it&#39;s pretty easy to get </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=233'><span>wrong.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=234'><span>And they&#39;ve made the same </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=235'><span>mistake many time.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=236'><span>What you shall do instead is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=239'><span>lift up the data into a common </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=241'><span>ancestor and let the two </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=243'><span>children have a reference to it.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=246'><span>When you have a single source of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=248'><span>truth, you&#39;re eliminating </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=250'><span>inconsistency bug between view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=251'><span>and your data.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=253'><span>And you can use the tool </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=254'><span>available in the language to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=255'><span>enforcing variant in your data.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=257'><span>With this principle in mind, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=260'><span>take a step back, look at all </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=262'><span>the source of truth in your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=263'><span>code, and then use this </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=265'><span>information to make decision </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=267'><span>about the structure of your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=272'><span>data.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=273'><span>So I really like listening to a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=275'><span>good podcast during my commute </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=277'><span>to Apple Park.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=277'><span>And I thought it will be great </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=279'><span>to build a podcast player with </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=281'><span>SwiftUI.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=281'><span>We are going to use this example </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=284'><span>throughout the talk to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=285'><span>demonstrate all the tool </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=286'><span>available to you.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=288'><span>Here is the UI that we are going </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=289'><span>to build.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=291'><span>It&#39;s the interface for the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=292'><span>player when we&#39;re going to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=293'><span>display the show and episode </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=295'><span>title, the playback button, and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=297'><span>the current time.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=299'><span>We are going to build this UI </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=301'><span>step by step.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=303'><span>But let&#39;s start by creating a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=304'><span>view that show the current </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=305'><span>episode.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=309'><span>We can start by creating a new </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=310'><span>view, Playerview, and this view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=312'><span>has one property.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=313'><span>That stored the current playing </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=314'><span>episode.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=315'><span>And we want to display the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=317'><span>episode show and title.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=319'><span>So in the body, we&#39;ll make a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=320'><span>VStack containing two texts so </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=322'><span>that they&#39;re stacked vertically.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=324'><span>And regular Swift property are </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=327'><span>your first tool.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=329'><span>They&#39;re great when you have a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=330'><span>view that needs to read all the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=331'><span>access to a derived piece of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=333'><span>data.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=334'><span>This is data that will be </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=335'><span>provided to the view by its </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=336'><span>parent.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=338'><span>But now, I want to be able to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=340'><span>play and pause, so let&#39;s have </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=342'><span>that.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=342'><span>We had a new property indicating </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=346'><span>whether the episode is playing </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=348'><span>or not.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=348'><span>And now the image that show a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=350'><span>different clip depending on the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=352'><span>value of isPlaying.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=353'><span>But now I want to make the Play </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=356'><span>button interactive so that when </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=358'><span>the user taps on it, would </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=359'><span>toggle the Playback state and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=361'><span>change the image as well.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=362'><span>And we can do that by using a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=367'><span>button.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=367'><span>A button takes some content and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=369'><span>an action to execute when the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=370'><span>user taps on it.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=372'><span>In the action, we just toggle </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=373'><span>isPlaying.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=375'><span>But if we go to build a run, we </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=378'><span>get a compiler error.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=380'><span>But this is good because it&#39;s </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=381'><span>keeping us on the right path and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=383'><span>through to one of the general </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=384'><span>principles of UI.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=385'><span>We don&#39;t mutate the view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=387'><span>hierarchy.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=388'><span>Every time your UI is updated, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=391'><span>it&#39;s because some view body is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=393'><span>generating a different value.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=394'><span>And in order to handle case like </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=397'><span>this, we have a tool that&#39;s </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=398'><span>called State.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=402'><span>So let&#39;s have home state through </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=403'><span>this view.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=404'><span>We can do that by using the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=406'><span>state property wrapper on the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=408'><span>isPlaying property.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=409'><span>And by doing this, we are </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=411'><span>telling the system that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=412'><span>isPlaying is a value that can </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=413'><span>change over time and that the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=415'><span>PlayerView depends on it.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=418'><span>Now if we build a run, we won&#39;t </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=419'><span>get a compiler error.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=421'><span>And when the user taps on the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=422'><span>button, the state value changes </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=425'><span>and the framework will generate </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=426'><span>a new body for this view.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=428'><span>If you&#39;re not familiar with </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=429'><span>Property Wrapper, it&#39;s a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=431'><span>powerful new feature in Swift </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=433'><span>5.1.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=434'><span>But we&#39;re not going into much </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=437'><span>detail about how they work.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=438'><span>And if you want to learn more, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=440'><span>check out these two great </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=440'><span>session.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=441'><span>For this talk, all you need to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=444'><span>know is that when you add the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=445'><span>Property Wrapper, you&#39;re </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=447'><span>wrapping this property and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=448'><span>augment it with some additional </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=449'><span>behavior when it&#39;s read or </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=451'><span>written.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=452'><span>And you might wonder, how does </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=455'><span>this work? </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=456'><span>What is this additional behavior </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=458'><span>with state? </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=460'><span>When you state the framework, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=462'><span>allocate the persistent storage </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=464'><span>for the variable on the view we </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=465'><span>have and track it as a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=466'><span>dependency because if the system </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=469'><span>is creating storage for you, you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=471'><span>always have to specify an </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=473'><span>initial constant value.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=474'><span>View can be recreated often by </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=477'><span>the system, but with state, the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=479'><span>framework knows that it needs to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=481'><span>persist the storage across </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=483'><span>multiple update of the same </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=484'><span>view.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=485'><span>And it&#39;s a good practice to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=488'><span>explicitly mark state property </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=490'><span>as private to really enforce the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=492'><span>idea that state is owned and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=494'><span>managed by that view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=495'><span>specifically.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=496'><span>But I want to take you behind </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=499'><span>the scene and show you what&#39;s </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=500'><span>happening when the user is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=501'><span>tapping on the button.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=505'><span>Let&#39;s start with view hierarchy </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=506'><span>we just showed.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=508'><span>We just say that when-- that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=510'><span>when we define some state, the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=511'><span>framework is allocating </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=513'><span>persistent storage for you.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=515'><span>One was the special property of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=516'><span>state variable is that SwiftUI </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=518'><span>kind of start when they change.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=520'><span>And because SwiftUI knows that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=523'><span>the state variable was writing </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=524'><span>the body, it knows that the view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=526'><span>rendering depend on that state </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=527'><span>variable.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=530'><span>When the user interact with the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=531'><span>button, the framework execute </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=533'><span>its action which in turn will </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=535'><span>meet at some state.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=538'><span>The runtime the data-- the state </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=540'><span>does change and starting </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=541'><span>validating their view that owns </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=542'><span>the state, which mean it will </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=545'><span>recompute the body of that view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=547'><span>and all of its children.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=549'><span>In this sense, all the changes </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=552'><span>always flow down through your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=553'><span>view hierarchy.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=554'><span>And we&#39;re able to do these very </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=556'><span>efficiently because the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=557'><span>framework is comparing the view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=559'><span>and rendering again only what is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=561'><span>changed.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=562'><span>This is exactly what we </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=565'><span>mentioned earlier when we say </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=566'><span>that the framework manages the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=567'><span>dependency for you.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=570'><span>But we also talk about source of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=572'><span>truth before and you should </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=574'><span>remember that every time you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=575'><span>declare a state, you define a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=578'><span>new source of truth that is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=579'><span>owned by your view.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=580'><span>And while this is so important </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=583'><span>that I&#39;m showing to you in big </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=585'><span>letter, another important </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=587'><span>takeaway is that view are a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=589'><span>function of state, not a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=590'><span>sequence of event.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=593'><span>Traditionally, you respond to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=595'><span>some event by directly mutating </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=597'><span>your view hierarchy.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=598'><span>For example, by adding or </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=599'><span>removing a subview or changing </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=601'><span>the alpha.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=603'><span>Instead, in SwiftUI, you mutate </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=605'><span>some state and the state work as </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=608'><span>a source of truth from which you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=609'><span>derive your view.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=610'><span>This is where SwiftUI, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=612'><span>declarative syntax shine.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=615'><span>You describe your view given the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=617'><span>current state.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=618'><span>And this is also how SwiftUI </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=621'><span>helps you manage the complexity </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=622'><span>of UI development allowing you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=624'><span>to write beautiful and correct </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=626'><span>interfaces.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=630'><span>You can think of your app as a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=631'><span>constant feedback loop between </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=633'><span>your user and the device.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=637'><span>It all start with your user.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=640'><span>The user interact with your app </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=642'><span>generating an action.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=646'><span>The action is executed by the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=648'><span>framework and mutate some state.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=651'><span>The system detect that the state </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=652'><span>has changed and so it knows that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=654'><span>it needs to update the view that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=655'><span>depends on the state.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=659'><span>This update will produce a new </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=661'><span>version of your UI that your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=663'><span>user can interact with.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=666'><span>This model where data always </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=669'><span>flow in a single direction, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=671'><span>instead is your single final </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=673'><span>point for all the changes, make </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=675'><span>the view update predictable and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=678'><span>simple to understand.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=679'><span>And now that we understand </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=682'><span>state, I want to go back to the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=683'><span>AppWare building and make some </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=685'><span>improvement.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=686'><span>So the first thing I want to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=690'><span>change is that whenever the user </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=691'><span>taps on Pause, the episode title </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=693'><span>should change to gray.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=694'><span>And we already know how to do </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=697'><span>that.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=698'><span>We can just use our isPlaying </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=699'><span>state and choose the right text </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=701'><span>color.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=702'><span>Next, I love some good </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=705'><span>refactoring.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=706'><span>And if you have seen the SwiftUI </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=707'><span>essential tool, you already know </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=709'><span>that view are a locust </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=711'><span>obstruction in SwiftUI.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=713'><span>You shall not be afraid of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=715'><span>grouping meaningful piece of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=717'><span>data in your view into smaller </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=719'><span>and reusable component that can </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=720'><span>be composed together.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=721'><span>And that&#39;s a good candidate </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=723'><span>here.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=724'><span>That&#39;s a code for the Play and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=727'><span>Pause button.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=728'><span>So let&#39;s encapsulate this logic </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=730'><span>into its own view.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=732'><span>And we can call this PlayButton.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=735'><span>And now let&#39;s take a look at </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=736'><span>implementation of PlayButton.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=737'><span>This is the same code as before </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=742'><span>just encapsulated into a new </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=743'><span>view.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=745'><span>But notice that we made the new </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=746'><span>state here but state is not the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=749'><span>right tool.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=750'><span>By using state, we&#39;ve created </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=752'><span>another source of truth for </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=754'><span>isPlaying, which we have to keep </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=756'><span>in sync with the state in the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=757'><span>parent PlayerView.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=758'><span>And that&#39;s not what we want.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=760'><span>What we want is to make this a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=763'><span>reusable component.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=765'><span>So this view shall not own a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=766'><span>source of truth, it just need to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=768'><span>be able to read a value and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=770'><span>mutate it.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=772'><span>But it doesn&#39;t need to own </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=772'><span>state.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=773'><span>And we have tools for this job.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=775'><span>It&#39;s called binding.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=776'><span>By using the Binding Property </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=780'><span>Wrapper, you define an explicit </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=782'><span>dependency to a source of truth </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=784'><span>without owning it.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=786'><span>Additionally, you don&#39;t need to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=787'><span>provide an initial value because </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=789'><span>the binding can be derived from </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=791'><span>a state.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=792'><span>So let&#39;s see how does-- how this </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=794'><span>fits in our example.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=795'><span>So the only change that we need </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=797'><span>to make is to use the binding </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=799'><span>property wrapper and omit the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=801'><span>initial value.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=802'><span>It&#39;s that simple.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=803'><span>Let&#39;s now see how we can provide </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=806'><span>a binding into PlayButton by </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=807'><span>going back to our PlayerView.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=811'><span>PlayerView is still holding the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=813'><span>state.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=813'><span>That&#39;s your source of truth.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=815'><span>From the state, you can derive a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=818'><span>binding by using the dollar </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=820'><span>prefix on the property name.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=822'><span>This is your way to allow a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=824'><span>component to access your state </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=827'><span>via binding.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=829'><span>The dollar prefix is another </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=831'><span>feature of property wrapper.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=833'><span>And if you want to learn more, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=835'><span>please watch the modern Swift </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=836'><span>API design talk.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=840'><span>I want for you to pause for a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=841'><span>second and appreciate how simple </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=844'><span>but powerful this is.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=846'><span>PlayButton does not contain a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=848'><span>copy of the isPlaying value.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=850'><span>Just as a reference to it </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=852'><span>through the binding, so there is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=854'><span>no need to keep this data in </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=856'><span>sync between your view.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=860'><span>And I want to contrast this with </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=861'><span>what we have to write today in </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=863'><span>UI kit, graph kit.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=866'><span>You have a view controller that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=868'><span>owns multiple view that need to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=870'><span>respond to user interaction by </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=872'><span>manually setting up target </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=874'><span>action or defining a delegate.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=876'><span>You have to observe the model </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=878'><span>change and respond to those </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=879'><span>event too.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=881'><span>Every time any value changes, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=883'><span>you have to read the value and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=885'><span>set it everywhere it&#39;s needed.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=887'><span>As soon as the complexity of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=890'><span>your app grows welling up with a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=892'><span>massive problem and I&#39;m sure all </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=895'><span>of you know what I&#39;m talking </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=896'><span>about here.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=898'><span>The whole purpose of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=899'><span>ViewController is to keep your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=901'><span>data in sync with your view.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=903'><span>This is all complexity that I-- </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=905'><span>you have to manage, but not in </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=908'><span>SwiftUI.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=909'><span>You have a simple tool to define </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=912'><span>your data dependency and the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=914'><span>framework takes care of all the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=915'><span>rest.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=916'><span>And well, you don&#39;t need a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=918'><span>ViewController anymore.</span></a></p><p><span>[</span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=920'><span> Applause and Cheering </span><span>]</span><span> </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=928'><span>This idea is so powerful.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=930'><span>This is applied throughout our </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=932'><span>framework.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=935'><span>If you take a look at the API </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=937'><span>for component like Toggle, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=938'><span>TextField and Slider, they all </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=940'><span>expect a binding.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=942'><span>The framework keeps you in </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=944'><span>control of where the source of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=946'><span>truth live.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=946'><span>You create the data and give </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=951'><span>that to the component, a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=952'><span>reference to it without ever </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=953'><span>duplicating that information or </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=955'><span>manually keep that in sync.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=957'><span>And that&#39;s pretty amazing.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=960'><span>In SwiftUI views are so many app </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=962'><span>that can views for layout, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=964'><span>navigation, and much more.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=967'><span>And in fact they are your single </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=969'><span>composition primitive.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=971'><span>They&#39;re also a great tool for </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=972'><span>encapsulating presentation logic </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=974'><span>for a single piece of data.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=976'><span>The frameworks allows you and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=978'><span>encourage you to create small </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=980'><span>view to represent a single piece </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=982'><span>of data that can be composed </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=984'><span>together.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=985'><span>And this is, again, the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=987'><span>framework guiding you to our </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=989'><span>composition of small unit that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=991'><span>you can reason about.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=991'><span>So let&#39;s go back to our example </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=995'><span>now.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=998'><span>I&#39;ve shown this UI to my </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=999'><span>designer and she&#39;s very </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1000'><span>impressed by how little code I </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1002'><span>had to write.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1004'><span>But she suggested some </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1005'><span>improvement.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1007'><span>We should animate the transition </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1008'><span>within Play and Pause.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1010'><span>Fortunately, it&#39;s very easy for </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1012'><span>me to make my designer because </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1014'><span>the framework keeps track of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1016'><span>everything that has changed.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1018'><span>It&#39;s incredibly easy and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1019'><span>powerful to drive an animation </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1021'><span>with state.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1025'><span>By wrapping the mutation to the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1026'><span>binding with an animation block, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1029'><span>the framework will animate the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1030'><span>transition when the value </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1032'><span>changes.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1033'><span>And you will always get the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1035'><span>correct animation to the final </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1036'><span>state.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1038'><span>If you want to learn more about </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1040'><span>SwiftUI powerful animation and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1042'><span>layout system and how to make </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1044'><span>amazing app, I invite you to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1046'><span>watch Building Custom View in </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1048'><span>SwiftUI.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1050'><span>We&#39;ve now seen state and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1052'><span>binding, but SwiftUI has quite </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1055'><span>few more trick up its sleeve.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1057'><span>And to show you more, I want to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1058'><span>invite Raj on stage.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1060'><span>Raj? </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1070'><span>Thanks, Luca.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1071'><span>I&#39;m going to walk you through a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1073'><span>few of the other tools we have </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1076'><span>from managing data in SwiftUI.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1078'><span>And by the end of this session, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1080'><span>you&#39;ll be able to design and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1082'><span>build robust reusable components </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1085'><span>that operate on all kinds of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1089'><span>data.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1089'><span>As you saw earlier, we have a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1091'><span>number of powerful tools for </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1093'><span>managing data in SwiftUI.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1095'><span>And Luca already covered a few </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1097'><span>of them such as using state, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1100'><span>binding, or even just using a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1102'><span>Swift property.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1103'><span>I&#39;m going to take you through </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1105'><span>the rest of these exciting tools </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1108'><span>starting with external changes </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1110'><span>in SwiftUI.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1110'><span>So I want to bring back the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1113'><span>diagram that Luca just showed </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1114'><span>you.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1116'><span>And in this diagram, the user </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1118'><span>interacted with the application.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1120'><span>This created an action which </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1122'><span>resulted in a mutation to some </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1124'><span>state and that was driven into a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1128'><span>new copy of the view that was </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1129'><span>rendered to the user.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1132'><span>Well, some events are initiated </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1135'><span>externally such as a timer or </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1138'><span>notification.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1140'><span>But remember, in SwiftUI, your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1143'><span>views are a function of some </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1144'><span>state.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1146'><span>There&#39;s a single funnel point </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1148'><span>for all of your changes.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1150'><span>And what this means is that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1152'><span>SwiftUI reacts to these external </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1154'><span>changes the same way it does to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1157'><span>user interaction.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1160'><span>So when a timer fires or a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1162'><span>notification is received, the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1164'><span>process looks pretty much the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1166'><span>same.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1167'><span>We create an action, perform a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1170'><span>mutation on some state, we get a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1173'><span>new copy of the view and that&#39;s </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1175'><span>rerendered to the user.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1177'><span>And in SwiftUI, we have a single </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1180'><span>abstraction for representing </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1181'><span>these external events.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1184'><span>And it&#39;s called a Publisher.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1185'><span>The publisher comes from the new </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1188'><span>combined framework.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1190'><span>Combine is a unified declarative </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1193'><span>API for processing values over </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1195'><span>time.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1197'><span>Now, we&#39;re not going to go into </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1198'><span>the details of Combine today, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1200'><span>but you should definitely check </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1201'><span>out these related sessions where </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1203'><span>you can find out much more.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1206'><span>For our purpose, there is one </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1208'><span>thing to remember when using </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1209'><span>these publishers with SwiftUI, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1212'><span>they should omit on the main </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1213'><span>thread.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1214'><span>Combine provides an easy to use </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1216'><span>operator called Receive On for </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1218'><span>this.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1219'><span>For more information, you can </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1221'><span>check out the Combine and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1222'><span>Practice session.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1225'><span>OK. Let&#39;s walk through this with </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1228'><span>an example.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1229'><span>Now, our users can sometimes get </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1232'><span>lost listening to podcasts and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1235'><span>they can get tired of hearing </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1236'><span>about the same millennial ramble </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1238'><span>on about avocado toast for hours </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1240'><span>on end.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1242'><span>So, we&#39;re going to add a time </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1244'><span>stamp to our podcast player so </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1246'><span>they know exactly where they are </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1248'><span>in the episode.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1250'><span>To do that, we&#39;ll add some state </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1253'><span>representing the current time </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1256'><span>and a text that draws that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1260'><span>value.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1260'><span>Next, we&#39;ll use the onReceive </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1263'><span>modifier.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1265'><span>Conveniently, I already built a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1266'><span>publisher that fires when the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1269'><span>current time changes.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1271'><span>And I&#39;ll use that publisher by </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1272'><span>passing it into this onReceive </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1274'><span>modifier.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1275'><span>Additionally, I&#39;ll also provide </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1277'><span>a closure that will execute when </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1280'><span>the publisher omits.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1282'><span>And that&#39;s it.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1284'><span>In doing this, we&#39;ve described a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1286'><span>dependency to SwiftUI.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1288'><span>So now, when the currentTime </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1290'><span>updates, we&#39;ll update our state </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1294'><span>and SwiftUI knows that there&#39;s a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1295'><span>dependency there.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1297'><span>So we&#39;ll update the label </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1298'><span>automatically.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1300'><span>There&#39;s no manual invalidation </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1302'><span>or management here.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1311'><span>So we briefly covered external </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1312'><span>changes in SwiftUI.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1315'><span>Next, I want to talk to you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1316'><span>about external data.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1320'><span>For that, we have the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1321'><span>BindableObject Protocol.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1324'><span>BindableObject is a convenient </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1326'><span>way to use the well encapsulated </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1328'><span>tried and true model that you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1330'><span>already have.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1333'><span>It&#39;s great for teaching SwiftUI </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1335'><span>about the reference type model </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1337'><span>you&#39;ve already built.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1339'><span>This is data that you own and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1341'><span>manage.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1343'><span>SwiftUI just needs to know how </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1345'><span>to react to changes in that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1348'><span>data.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1349'><span>So let&#39;s use another example.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1352'><span>Our users expect that their </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1354'><span>podcasts sync across all of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1356'><span>their devices and I&#39;ve been </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1358'><span>tasked with adding this </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1359'><span>functionality.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1359'><span>So I&#39;ve already gotten started </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1361'><span>and I&#39;ve built up a model and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1364'><span>now it&#39;s time to use the model </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1365'><span>that I&#39;ve built in our view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1367'><span>hierarchy and bring it into our </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1368'><span>podcast player.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1370'><span>Let me show you how easy that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1372'><span>is.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1373'><span>You could see here a sketch of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1374'><span>the model that we built.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1377'><span>All I need to do to use this </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1379'><span>model with SwiftUI is to conform </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1381'><span>it to the BindableObject </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1384'><span>Protocol.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1390'><span>With BindableObject, all we need </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1392'><span>to provide is a publisher.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1394'><span>This publisher represents </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1397'><span>changes to our data.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1399'><span>And remember, the combined </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1400'><span>publisher is our single </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1402'><span>abstraction for representing </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1403'><span>external changes to SwiftUI.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1406'><span>So here, we&#39;ll provide a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1408'><span>publisher in the didChange </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1409'><span>property.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1410'><span>PassthroughSubject is a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1411'><span>publisher.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1413'><span>And then SwiftUI will subscribe </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1416'><span>to this publisher, so it knows </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1417'><span>when to update our view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1419'><span>hierarchy.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1420'><span>Then in the advanced method, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1424'><span>when we mutate our model, we&#39;ll </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1426'><span>simply call send on the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1428'><span>publisher.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1430'><span>Now, note that for correctness, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1432'><span>we need to do this any time our </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1434'><span>model changes so that our view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1435'><span>hierarchy can stay up to date.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1437'><span>But thankfully, SwiftUI has our </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1439'><span>back.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1440'><span>It handles these updates </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1441'><span>gracefully, so you get great </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1444'><span>performance and correctness.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1447'><span>So now we&#39;ve built our model and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1449'><span>its conformance to the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1450'><span>BindableObject Protocol.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1453'><span>Next, I want to show you how to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1454'><span>use that model in the view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1455'><span>hierarchy.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1457'><span>Remember the two principles from </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1459'><span>earlier.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1460'><span>Every piece of data has a source </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1461'><span>of truth and when you access </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1463'><span>that data, you create a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1465'><span>dependency on it.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1466'><span>So we&#39;ve created our source of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1468'><span>truth but we don&#39;t have a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1469'><span>dependency yet.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1471'><span>Fortunately, it&#39;s really easy to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1473'><span>create dependencies on your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1475'><span>bindable objects.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1476'><span>I brought up this very basic </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1480'><span>diagram here.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1481'><span>You can see we have our view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1483'><span>hierarchy in blue on the right </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1486'><span>and we have our model in green </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1487'><span>on the left.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1489'><span>Now, we can connect the two </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1491'><span>creating a dependency using the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1493'><span>ObjectBinding property wrapper.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1496'><span>And as we do this, each view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1498'><span>that has that property wrapper </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1500'><span>will depend on the model that we </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1502'><span>wrote earlier.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1505'><span>Just like with state, when you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1507'><span>use the ObjectBinding property </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1509'><span>wrapper and add that to your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1510'><span>view, the framework recognizes </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1513'><span>that there&#39;s a dependency there.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1514'><span>And so in body, when you access </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1516'><span>that data, we automatically </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1518'><span>figure out when to update your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1521'><span>view.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1521'><span>In code, this looks something </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1525'><span>like this.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1527'><span>When you create your view, you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1528'><span>add the ObjectBinding property </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1530'><span>wrapper to a property in your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1532'><span>view.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1533'><span>And then when you instantiate </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1536'><span>your view, you just pass the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1538'><span>reference to your model that you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1539'><span>already have.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1541'><span>Note that this creates an </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1543'><span>explicit dependency in the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1545'><span>initializer of the view, which </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1547'><span>is really great because now </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1549'><span>anytime I go to instantiate my </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1550'><span>view, I know that it has a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1552'><span>dependency on the model.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1558'><span>And that&#39;s it.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1560'><span>And as we do this, each view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1562'><span>with the property wrapper will </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1564'><span>automatically subscribe the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1565'><span>changes in our BindableObject, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1568'><span>which means we get automatic </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1569'><span>dependency tracking.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1571'><span>Again, no manual invalidation or </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1573'><span>synchronization needed.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1583'><span>So I want to pause and take </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1584'><span>careful note here because if </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1586'><span>using SwiftUI are value types, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1589'><span>any time you&#39;re using a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1590'><span>reference type, you should be </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1592'><span>using the ObjectBinding property </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1593'><span>wrapper.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1594'><span>This way the framework will know </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1596'><span>when that data changes and can </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1598'><span>keep your view hierarchy up to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1599'><span>date.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1600'><span>So that&#39;s how to create a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1603'><span>dependency using ObjectBinding </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1605'><span>on BindableObject.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1607'><span>But we actually have another </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1608'><span>tool for creating these </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1609'><span>dependencies as well.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1612'><span>You can create indirect </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1614'><span>dependencies.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1616'><span>So I brought back a similar </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1617'><span>diagram to the one that you just </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1618'><span>saw, but this time our view has </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1621'><span>gained some children.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1622'><span>Next, I want to bring in the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1626'><span>environment.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1628'><span>If you&#39;ve watched the SwiftUI </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1629'><span>Essentials talk, you know that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1631'><span>the environment is a really </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1632'><span>great encapsulation for pushing </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1635'><span>data down through your view </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1636'><span>hierarchy.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1638'><span>And using the environment object </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1639'><span>modifier, we can actually write </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1642'><span>our BindableObject into the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1647'><span>environment.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1648'><span>Now, our model is in the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1649'><span>environment.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1650'><span>We can create dependencies on </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1654'><span>our model by using the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1655'><span>EnvironmentObject property </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1659'><span>wrapper.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1660'><span>Now, by using this property </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1661'><span>wrapper, we can create a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1663'><span>dependency on that model.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1666'><span>But there&#39;s more.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1669'><span>You can actually use this in </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1670'><span>multiple places.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1672'><span>So you can use this in a variety </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1675'><span>of views throughout your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1676'><span>hierarchy and they will all </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1677'><span>depend on the same model.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1680'><span>And, of course, when that data </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1683'><span>changes, everything will get </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1685'><span>updated automatically.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1688'><span>You get the same automatic </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1689'><span>dependency tracking as you do </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1691'><span>with ObjectBinding.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1693'><span>You describe the dependency to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1695'><span>SwiftUI by using these tools and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1698'><span>the framework handles the rest.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1700'><span>It&#39;s pretty great.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1707'><span>So let&#39;s update our podcast </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1709'><span>player to take advantage of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1709'><span>this.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1711'><span>To do that, this is it.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1714'><span>You just need to add the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1715'><span>EnvironmentObject property </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1717'><span>wrapper to the view and then in </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1720'><span>an ancestor higher up in the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1721'><span>hierarchy just provide the model </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1723'><span>using the EnvironmentObject </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1724'><span>modifier.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1726'><span>Now, whenever we use our player </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1728'><span>in the body, SwiftUI will </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1730'><span>automatically update our view on </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1732'><span>our behalf.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1733'><span>So you&#39;re probably wondering </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1736'><span>when would I use </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1736'><span>EnvironmentObject versus </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1738'><span>ObjectBinding? </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1740'><span>Well, you can actually build </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1742'><span>your whole app with </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1744'><span>ObjectBinding, but it can get </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1746'><span>kind of cumbersome to pass </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1748'><span>around the model from hop to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1749'><span>hop.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1751'><span>And that&#39;s where </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1751'><span>EnvironmentObject comes in.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1754'><span>It&#39;s a really useful convenience </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1756'><span>for passing data around your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1758'><span>hierarchy indirectly.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1761'><span>Here, you can see by using </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1763'><span>EnvironmentObject, we can pass </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1765'><span>the model indirectly through our </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1767'><span>view hierarchy, which means we </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1769'><span>don&#39;t have to instantiate all </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1770'><span>the intermediate views to the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1772'><span>hierarchy with the model.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1777'><span>So the environment is actually a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1779'><span>great way to pass all sorts of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1781'><span>data indirectly down through </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1782'><span>your view hierarchy.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1784'><span>And you might have seen its use </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1786'><span>for things such as accent color </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1788'><span>or layout direction and even </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1791'><span>more.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1792'><span>And as Luca said earlier, data </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1795'><span>comes in all sorts of shapes and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1796'><span>forms.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1798'><span>Well, values like accent color </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1800'><span>and layout direction, those are </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1802'><span>just data.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1804'><span>And when you use them in your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1806'><span>views, you&#39;re creating a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1807'><span>dependency on them.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1809'><span>In fact, the environment is a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1812'><span>general purpose container for </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1813'><span>handling all sorts of indirect </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1815'><span>data and dependencies.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1816'><span>And the framework uses it </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1817'><span>liberally to give you rich </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1820'><span>features like Dynamic Type and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1822'><span>Dark Mode.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1824'><span>You can also use the environment </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1825'><span>in previews to provide new </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1827'><span>values for things like the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1829'><span>accent color or theme.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1835'><span>So that&#39;s a quick tour through </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1837'><span>the powerful tools we have in </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1839'><span>SwiftUI for handling data.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1842'><span>Next, I want to help you build </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1843'><span>some intuition for how to use </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1846'><span>the right tool and how they all </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1848'><span>fit together.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1849'><span>One of the big themes here is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1853'><span>that every piece of data has a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1855'><span>single source of truth.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1857'><span>And in SwiftUI, we really have </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1859'><span>two options for managing these </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1861'><span>sources of truth.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1864'><span>First, we have state.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1866'><span>State is great for data that&#39;s </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1868'><span>view local, a value type, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1871'><span>managed, allocated and created </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1874'><span>by the framework.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1875'><span>And BindableObject is great for </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1879'><span>data that you control.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1882'><span>It&#39;s great for representing </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1883'><span>external data to SwiftUI such as </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1885'><span>in onDevice database, this is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1889'><span>storage that you manage, which </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1892'><span>makes it great for the model </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1894'><span>that you already have.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1895'><span>So now that we&#39;ve talked about </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1898'><span>sources of truth, I want to talk </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1900'><span>a little bit about building </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1902'><span>reusable components.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1904'><span>One of the things that&#39;s great </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1906'><span>about SwiftUI is that views are </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1908'><span>low cost obstruction.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1909'><span>And what that means is that you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1912'><span>don&#39;t have to make the tradeoff </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1914'><span>between great architecture and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1916'><span>performance.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1918'><span>You can build the architecture </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1919'><span>you&#39;ve always wanted to build </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1921'><span>and you can also get great </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1922'><span>performance.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1923'><span>You don&#39;t have to make the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1924'><span>straight off.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1926'><span>And with SwiftUI, you can focus </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1929'><span>on making your views into </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1930'><span>reusable components.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1932'><span>When you do this, you&#39;ll </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1934'><span>probably notice that most of the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1936'><span>time when you&#39;re using data in </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1937'><span>your views, you probably don&#39;t </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1939'><span>need to mutate it.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1941'><span>And so, read-only access is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1944'><span>preferred when you can get away </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1946'><span>with that.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1948'><span>For that, we have Swift </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1950'><span>properties and the environment.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1952'><span>And because views in SwiftUI are </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1954'><span>value types, the framework can </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1956'><span>automatically determine when </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1957'><span>your data changes and update </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1959'><span>your view as a result.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1963'><span>In general, you should prefer </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1964'><span>immutable access, but sometimes </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1966'><span>you do need to mutate a value.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1969'><span>And for that, we have binding.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1972'><span>As Luca told you earlier, a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1975'><span>binding is first class reference </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1977'><span>to data.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1979'><span>It allows your components to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1980'><span>read and write a value without </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1983'><span>owning it.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1985'><span>And this makes it great for </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1986'><span>reusability.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1988'><span>In fact, you can get a binding </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1989'><span>to many different </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1990'><span>representations of data.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1992'><span>We showed you today how to get a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1993'><span>binding to state, but you can </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1995'><span>also get a binding to an </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1996'><span>ObjectBinding.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=1998'><span>In fact, you can get a binding </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2000'><span>to another binding as well.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2002'><span>All you need to do is use the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2004'><span>dollar sign prefix as we showed </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2005'><span>you earlier.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2006'><span>It allows you to derive a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2008'><span>binding from another one of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2009'><span>these tools.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2010'><span>I want to pause for a minute and </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2013'><span>appreciate how powerful this is.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2015'><span>Earlier on, Luca showed you that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2017'><span>many of the components we vend </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2019'><span>in SwiftUI, they operate on </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2020'><span>bindings.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2022'><span>So let&#39;s use Toggle for example.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2025'><span>Toggle takes a binding to a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2026'><span>Boolean.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2028'><span>But the beauty of data in </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2029'><span>SwiftUI is that Toggle doesn&#39;t </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2031'><span>need to know or care where that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2035'><span>Boolean lives or comes from.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2037'><span>All it needs to do is know how </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2039'><span>to read the value and change the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2041'><span>value.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2042'><span>Binding is a tool that </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2044'><span>encapsulates these operations </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2046'><span>which gets this separation of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2048'><span>concern to the Toggle.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2050'><span>And this is the real power of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2054'><span>using data in SwiftUI.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2056'><span>You can get great correctness </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2058'><span>and great separation of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2060'><span>concerns.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2063'><span>So you&#39;ll notice, I didn&#39;t </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2065'><span>actually mention state when I </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2066'><span>was talking about building </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2068'><span>reusable components.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2069'><span>Well, state is trapped inside of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2072'><span>your view and its children.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2074'><span>So if your component needs to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2076'><span>operate on a value that&#39;s </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2078'><span>external or somewhere else, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2080'><span>state might not be a great fit.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2084'><span>And state is a fantastic tool </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2086'><span>for prototyping a first </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2087'><span>approach, as you saw today with </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2089'><span>our podcast player.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2091'><span>But most of the time, your data </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2093'><span>is going to live outside </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2095'><span>SwiftUI.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2097'><span>For example, your data might </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2099'><span>live in a database and that will </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2100'><span>probably be represented by </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2102'><span>something like a BindableObject.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2104'><span>So if you find yourself reaching </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2107'><span>for state, please take a step </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2109'><span>back and consider, does this </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2112'><span>data really need to be owned by </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2113'><span>this view? </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2115'><span>Perhaps the data, the state </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2117'><span>should be lifted up into a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2119'><span>parent as Luca showed you </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2120'><span>earlier or maybe that data can </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2123'><span>just be represented by an </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2124'><span>external source using a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2126'><span>BindableObject.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2127'><span>So it&#39;s important to be careful </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2131'><span>when using state, but it does </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2133'><span>have its strengths.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2135'><span>One of the great uses of state </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2137'><span>that we have in our framework is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2139'><span>button.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2141'><span>Button uses state to track </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2143'><span>whether the user is pressing on </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2144'><span>it and highlight appropriately.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2147'><span>And what&#39;s great about using </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2148'><span>state for button is that when </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2151'><span>you create a button, you don&#39;t </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2152'><span>need to care about the highlight </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2154'><span>state.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2155'><span>That is data that is truly owned </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2158'><span>by the button.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2161'><span>So when you&#39;re reaching for </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2162'><span>state, consider do I have a case </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2164'><span>that&#39;s like button? </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2166'><span>And if you do, state might be a </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2167'><span>great tool.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2168'><span>But if not, consider using one </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2170'><span>of the other powerful tools </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2172'><span>we&#39;ve shown you for using data </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2173'><span>in SwiftUI.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2177'><span>So that&#39;s how to build reusable </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2178'><span>components with SwiftUI.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2180'><span>But what we&#39;ve shown you here is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2183'><span>actually generally applicable to </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2185'><span>all sorts of software.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2187'><span>Every piece of software has data </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2190'><span>and every piece of software has </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2192'><span>data access.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2194'><span>And by carefully understanding </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2196'><span>your data, minimizing your </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2198'><span>sources of truth, and building </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2200'><span>reusable components, you can </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2202'><span>eliminate an entire class of </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2204'><span>bugs.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2205'><span>And when you use SwiftUI, </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2209'><span>applying these concepts is </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2210'><span>incredibly easy because we&#39;ve </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2212'><span>built them right into the </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2214'><span>framework.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2217'><span>We have a number of related </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2218'><span>sessions on SwiftUI and I </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2220'><span>encourage you to check out all </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2223'><span>of them.</span></a><span> </span><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2224'><span>It will change the way you build </span></a><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2227'><span>apps.</span></a></p><p><a href='https://developer.apple.com/videos/play/wwdc2019-226/?time=2228'><span>Thank you.</span></a></p></li></ul><p><span> </span></p></div>
+</body>
+</html>
