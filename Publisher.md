@@ -6,7 +6,7 @@
 
 ------
 
-声明一个类型可以随时间传递一系列值.
+声明一个类型可以随时间传递一系列值. Publisher 的主要功能就是: 发布事件数据；被 Subscriber 订阅
 
 消息有四种：
 - subscription - “发布者”和“订阅者”之间的连接。
@@ -37,7 +37,10 @@ public protocol Publisher {
     ///  
     /// - Parameters:
     ///     - subscriber: 绑定到此发布者的订阅者 subscriber， 一旦绑定，就开始接受数据
-    func receive<S>(subscriber: S) where S : Subscriber, Self.Failure == S.Failure, Self.Output == S.Input
+    func receive<S>(subscriber: S) where 
+  					S : Subscriber, 
+  					Self.Failure == S.Failure, 
+  					Self.Output == S.Input
 }
 ```
 

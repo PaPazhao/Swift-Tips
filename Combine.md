@@ -289,23 +289,15 @@ print(type(of: v))
 ///     // Prints "The value of 'obj' is 100"
 ```
 
-
-
-```c
-	for (语句1; 判断语句; 语句2) {
-     实体语句1;
-     实体语句2;
-     其他语句 
-  }
-  
-  for (语句1; 判断语句 && (实体语句1, 1) && (实体语句2, 1); 语句2) {
-     其他语句 
-  }  
+```swift
+extension Subscribers {
+    /// 发布信号结束: 表示发布者由于正常完成或错误而没有产生其他元素的信号, 
+    public enum Completion<Failure> where Failure : Error {
+        case finished  					//  Publisher 正常完成
+        case failure(Failure)		// Publisher 由于错误而停止发布 
+    }
+}
 ```
-
-
-
-
 
 
 
