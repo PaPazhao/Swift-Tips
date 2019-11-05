@@ -38,9 +38,9 @@ public protocol Publisher {
     /// - Parameters:
     ///     - subscriber: 绑定到此发布者的订阅者 subscriber， 一旦绑定，就开始接受数据
     func receive<S>(subscriber: S) where 
-  					S : Subscriber, 
-  					Self.Failure == S.Failure, 
-  					Self.Output == S.Input
+                            S : Subscriber, 
+                            Self.Failure == S.Failure, 
+                            Self.Output == S.Input
 }
 ```
 
@@ -75,8 +75,8 @@ extension Publisher {
     /// - Parameters:
     ///     - subscriber: 附加到此`Publisher` 的订阅者，一旦附加，它就可以开始接收值.
     func receive<S>(subscriber: S) where S : Subscriber, 
-  																		Self.Failure == S.Failure, 
-  																		Self.Output == S.Input
+                            Self.Failure == S.Failure, 
+                            Self.Output == S.Input
 }
 ```
 
@@ -98,9 +98,10 @@ extension Publisher {
 ```swift
 extension Publisher {
 		/// - subscriber: 附加到此“发布者”的订阅者。附加后，订户可以开始接收值。
-		public func subscribe<S>(_ subscriber: S) where S : Subscriber, 
-																								Self.Failure == S.Failure, 
-																								Self.Output == S.Input
+		public func subscribe<S>(_ subscriber: S) where 
+                            S : Subscriber,
+                            Self.Failure == S.Failure, 
+                            Self.Output == S.Input
 }
 ```
 
@@ -119,9 +120,10 @@ extension Publisher {
 ```swift
 extension Publisher {
   	/// - subject: 附加到该发布者的主题
-    public func subscribe<S>(_ subject: S) -> AnyCancellable where S : Subject, 
-  																							Self.Failure == S.Failure, 
-  																							Self.Output == S.Output
+    public func subscribe<S>(_ subject: S) -> AnyCancellable where 
+                S : Subject, 
+                Self.Failure == S.Failure, 
+                Self.Output == S.Output
 }
 ```
 
@@ -150,7 +152,8 @@ extension Publisher where Self.Failure == Never {
     ///   - object: 包含属性的对象。订阅者在每次收到新值时都会赋值给对象的属性。
     /// - Returns: 一个 AnyCancellable实例 实例; 当您不再希望发布者自动给属性赋值时，请在此实例
   	///            上调用 cancel（）。反初始化此 AnyCancellable 实例也将取消自动赋值。
-    public func assign<Root>(to keyPath: ReferenceWritableKeyPath<Root, Self.Output>, on object: Root) -> AnyCancellable
+    public func assign<Root>(to keyPath: ReferenceWritableKeyPath<Root, Self.Output>, 
+                             on object: Root) -> AnyCancellable
 }
 ```
 
